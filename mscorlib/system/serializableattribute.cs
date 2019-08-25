@@ -17,9 +17,15 @@ namespace System {
     using System;
     using System.Reflection;
 
+    public sealed class SerializableAttribute : Serializable2
+    {
+        public SerializableAttribute() {
+        }
+    }
+
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Delegate, Inherited = false)]
-[System.Runtime.InteropServices.ComVisible(true)]
-    public sealed class SerializableAttribute : Attribute 
+    [System.Runtime.InteropServices.ComVisible(true)]
+    public class Serializable2 : Attribute //  SerializableAttribute : Attribute 
     {
         internal static Attribute GetCustomAttribute(RuntimeType type) 
         { 
@@ -30,7 +36,7 @@ namespace System {
             return type.IsSerializable; 
         }
 
-        public SerializableAttribute() {
+        public Serializable2() {
         }
     }
 }

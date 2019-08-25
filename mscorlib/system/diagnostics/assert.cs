@@ -88,7 +88,8 @@ namespace System.Diagnostics {
                     if (Debugger.Launch() == false)
                     {
                         throw new InvalidOperationException(
-                                Environment.GetResourceString("InvalidOperation_DebuggerLaunchFailed"));
+                                Environment.GetResourceString("InvalidOperation_DebuggerLaunchFailed" as string)
+                                as String);
                     }                        
                 }   
             }

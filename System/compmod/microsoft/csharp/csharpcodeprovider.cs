@@ -561,7 +561,7 @@ namespace Microsoft.CSharp {
         ///       Gets the command arguments from the specified <see cref='System.CodeDom.Compiler.CompilerParameters'/>.
         ///    </para>
         /// </devdoc>
-        [ResourceExposure(ResourceScope.None)]
+        [ResourceExposureAttribute(ResourceScope.None)]
         [ResourceConsumption(ResourceScope.Machine, ResourceScope.Machine)]
         private string CmdArgsFromParameters(CompilerParameters options) {
             StringBuilder sb = new StringBuilder(128);
@@ -665,7 +665,7 @@ namespace Microsoft.CSharp {
         /// <devdoc>
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
-        [ResourceExposure(ResourceScope.None)]
+        [ResourceExposureAttribute(ResourceScope.None)]
         [ResourceConsumption(ResourceScope.Machine, ResourceScope.Machine)]
         private string GetResponseFileCmdArgs(CompilerParameters options, string cmdArgs) {
 
@@ -3362,7 +3362,7 @@ namespace Microsoft.CSharp {
             }
         }
 
-        [ResourceExposure(ResourceScope.Machine)]
+        [ResourceExposureAttribute(ResourceScope.Machine)]
         [ResourceConsumption(ResourceScope.Machine)]
         private CompilerResults FromFileBatch(CompilerParameters options, string[] fileNames) {
             if( options == null) {
@@ -3536,7 +3536,7 @@ namespace Microsoft.CSharp {
         }
 
         /// <internalonly/>
-        [ResourceExposure(ResourceScope.Machine)]
+        [ResourceExposureAttribute(ResourceScope.Machine)]
         [ResourceConsumption(ResourceScope.Machine)]
         CompilerResults ICodeCompiler.CompileAssemblyFromFile(CompilerParameters options, string fileName) {
             if( options == null) {
@@ -3580,7 +3580,7 @@ namespace Microsoft.CSharp {
         }
         
         /// <internalonly/>
-        [ResourceExposure(ResourceScope.Machine)]
+        [ResourceExposureAttribute(ResourceScope.Machine)]
         [ResourceConsumption(ResourceScope.Machine)] 
         CompilerResults ICodeCompiler.CompileAssemblyFromFileBatch(CompilerParameters options, string[] fileNames) {
             if( options == null) {
@@ -3617,7 +3617,7 @@ namespace Microsoft.CSharp {
             }
         }
         
-        [ResourceExposure(ResourceScope.Machine)]
+        [ResourceExposureAttribute(ResourceScope.Machine)]
         [ResourceConsumption(ResourceScope.Machine)]
         internal void Compile(CompilerParameters options, string compilerDirectory, string compilerExe, string arguments,
                               ref string outputFile, ref int nativeReturnValue, string trueArgs) {
@@ -3662,7 +3662,7 @@ namespace Microsoft.CSharp {
         ///       results from the compilation.
         ///    </para>
         /// </devdoc>
-        [ResourceExposure(ResourceScope.Machine)]
+        [ResourceExposureAttribute(ResourceScope.Machine)]
         [ResourceConsumption(ResourceScope.Machine)]
         private CompilerResults FromFile(CompilerParameters options, string fileName) {
             if( options == null) {
@@ -3707,7 +3707,7 @@ namespace Microsoft.CSharp {
         ///       options, and returns the results from the compilation.
         ///    </para>
         /// </devdoc>
-        [ResourceExposure(ResourceScope.None)]
+        [ResourceExposureAttribute(ResourceScope.None)]
         [ResourceConsumption(ResourceScope.Machine, ResourceScope.Machine)]
         private CompilerResults FromDomBatch(CompilerParameters options, CodeCompileUnit[] ea) {
             if( options == null) {
@@ -3783,7 +3783,7 @@ namespace Microsoft.CSharp {
         ///       returns the results from the compilation.
         ///    </para>
         /// </devdoc>
-        [ResourceExposure(ResourceScope.None)]
+        [ResourceExposureAttribute(ResourceScope.None)]
         [ResourceConsumption(ResourceScope.Machine, ResourceScope.Machine)]
         private CompilerResults FromSourceBatch(CompilerParameters options, string[] sources) {
             if( options == null) {

@@ -20,7 +20,7 @@ namespace System.Reflection {
 
     // Interface does not need to be marked with the serializable attribute
 [System.Runtime.InteropServices.ComVisible(true)]
-    public interface ICustomAttributeProvider
+    public interface ICustomAttributeProvider2
     {
 
         // Return an array of custom attributes identified by Type

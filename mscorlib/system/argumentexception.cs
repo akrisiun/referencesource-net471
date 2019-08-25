@@ -21,11 +21,21 @@ namespace System {
     using System.Globalization;
     using System.Security.Permissions;
     using System.Diagnostics.Contracts;
+
+    // using Environment = global::System.Environment;
+
     // The ArgumentException is thrown when an argument does not meet 
     // the contract of the method.  Ideally it should give a meaningful error
     // message describing what was wrong and which parameter is incorrect.
-    // 
-[System.Runtime.InteropServices.ComVisible(true)]
+    public class ArgumentException2 : ArgumentException
+    {
+    	public ArgumentException2() 
+            : base(Environment.GetResourceString("Arg_ArgumentException")) {
+            SetErrorCode(__HResults.COR_E_ARGUMENT);
+        }
+    
+    }
+    [System.Runtime.InteropServices.ComVisible(true)]   
     [Serializable]
     public class ArgumentException : SystemException, ISerializable {
         private String m_paramName;

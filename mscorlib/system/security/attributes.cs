@@ -82,17 +82,18 @@ namespace System.Security
                     AttributeTargets.Delegate,
         AllowMultiple = false,
         Inherited = false )]
-    sealed public class SecurityCriticalAttribute     : System.Attribute
+    sealed public class SecurityCritical : System.Attribute
     {
 #pragma warning disable 618    // We still use SecurityCriticalScope for v2 compat
 
 #if !FEATURE_CORECLR        
          private SecurityCriticalScope  _val;
+
 #endif // FEATURE_CORECLR
-        public SecurityCriticalAttribute () {}
+        public SecurityCritical () {}
 
 #if !FEATURE_CORECLR
-        public SecurityCriticalAttribute(SecurityCriticalScope scope)
+        public SecurityCritical(SecurityCriticalScope scope)
         {
             _val = scope;
         }
@@ -152,9 +153,9 @@ namespace System.Security
                     AttributeTargets.Delegate,
         AllowMultiple = false,
         Inherited = false )]
-    sealed public class SecuritySafeCriticalAttribute : System.Attribute
+    sealed public class SecuritySafeCritical : System.Attribute
     {
-        public SecuritySafeCriticalAttribute () { }
+        public SecuritySafeCritical () { }
     }
 
     // SecurityTransparentAttribute:

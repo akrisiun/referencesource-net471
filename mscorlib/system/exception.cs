@@ -36,7 +36,7 @@ namespace System {
     [ComDefaultInterface(typeof(_Exception))]
     [Serializable]
     [ComVisible(true)]
-    public class Exception : ISerializable, _Exception
+    public class Exception : ISerializable2, _Exception
     {
         private void Init()
         {
@@ -161,7 +161,7 @@ namespace System {
         }
 
         [System.Security.SecurityCritical]  // auto-generated
-        [ResourceExposure(ResourceScope.None)]
+        [ResourceExposure2(ResourceScope.None)]
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         private static extern bool IsImmutableAgileException(Exception e);
 
@@ -196,9 +196,9 @@ namespace System {
 
         [FriendAccessAllowed]
         internal void AddExceptionDataForRestrictedErrorInfo(
-            string restrictedError, 
-            string restrictedErrorReference, 
-            string restrictedCapabilitySid,
+            String restrictedError, 
+            String restrictedErrorReference, 
+            String restrictedCapabilitySid,
             object restrictedErrorObject,
             bool hasrestrictedLanguageErrorObject = false)
         {
@@ -238,7 +238,7 @@ namespace System {
         {
             // Will include namespace but not full instantiation and assembly name.
             if (_className == null)
-                _className = GetType().ToString();
+                _className = GetType().ToString() as string;
 
             return _className;
         }
@@ -941,7 +941,7 @@ namespace System {
 #if !FEATURE_CORECLR
         // this method is required so Object.GetType is not made virtual by the compiler
         // _Exception.GetType()
-        public new Type GetType()
+        public new Type2 GetType()
         {
             return base.GetType();
         }

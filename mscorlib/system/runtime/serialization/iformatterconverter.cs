@@ -19,8 +19,10 @@ namespace System.Runtime.Serialization {
     using System;
 
     [CLSCompliant(false)]
-[System.Runtime.InteropServices.ComVisible(true)]
-    public interface IFormatterConverter {
+    [System.Runtime.InteropServices.ComVisible(true)]
+#pragma warning disable CS3021 // Type or member does not need a CLSCompliant attribute because the assembly does not have a CLSCompliant attribute
+    public interface IFormatterConverter
+    {
         Object Convert(Object value, Type type);
         Object Convert(Object value, TypeCode typeCode);
         bool   ToBoolean(Object value);

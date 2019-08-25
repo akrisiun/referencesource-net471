@@ -7,17 +7,17 @@
 namespace System.Runtime.CompilerServices
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface | AttributeTargets.Delegate, Inherited = false, AllowMultiple = false)]
-    public sealed class TypeForwardedFromAttribute : Attribute
+    public sealed class TypeForwardedFrom2 : Attribute
     {
         string assemblyFullName;
 
-        private TypeForwardedFromAttribute()
+        private TypeForwardedFrom2()
         {
             // Disallow default constructor
         }
 
 
-        public TypeForwardedFromAttribute(string assemblyFullName)
+        public TypeForwardedFrom2(string assemblyFullName)
         {
             if (String.IsNullOrEmpty(assemblyFullName))
             {

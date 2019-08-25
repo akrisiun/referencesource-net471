@@ -52,7 +52,7 @@ namespace System.Collections {
     
         // Adds a key-value pair to the dictionary.
         // 
-        void Add(Object key, Object value);
+        void Add(object key, object value);
     
         // Removes all pairs from the dictionary.
         void Clear();

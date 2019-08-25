@@ -1,0 +1,177 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyVersion>5.0.0.825</AssemblyVersion>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <NoWarn>612,618,3001,3002,3003,1635,1699,436,CS0436</NoWarn>
+    <LangVersion>latest</LangVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <!--<Platform Condition=" '$(Platform)' == '' ">net_4_x</Platform>-->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <NoStdLib>True</NoStdLib>
+    <RuntimeMetadataVersion>Mono</RuntimeMetadataVersion>
+    <NoConfig>True</NoConfig>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>mscorlib</AssemblyName>
+
+    <NETStandardInbox>true</NETStandardInbox>
+    <NETStandardMaximumVersionExclusive>2.2</NETStandardMaximumVersionExclusive>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="fx\src\data\System\Data\Common\DataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Common\DBCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Common\DBCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Common\DBConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Common\DbDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\DataColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\DataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\DataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\DataView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\DataViewManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Odbc\OdbcCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Odbc\OdbcCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Odbc\OdbcConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\Odbc\OdbcDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\OleDb\OleDbCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\OleDb\OleDbCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\OleDb\OleDbConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\OleDb\OleDbDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\ProviderBase\DbConnectionHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\RelatedView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\SqlClient\SqlCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\SqlClient\SqlCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\SqlClient\SqlConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="fx\src\data\System\Data\SqlClient\SqlDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Common\DataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Common\DBCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Common\DBCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Common\DBConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Common\DbDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\DataColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\DataSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\DataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\DataView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\DataViewManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Odbc\OdbcCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Odbc\OdbcCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Odbc\OdbcConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\Odbc\OdbcDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\OleDb\OleDbCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\OleDb\OleDbCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\OleDb\OleDbConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\OleDb\OleDbDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\ProviderBase\DbConnectionHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\RelatedView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\SqlClient\SqlCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\SqlClient\SqlCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\SqlClient\SqlConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Data\SqlClient\SqlDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

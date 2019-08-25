@@ -10,9 +10,9 @@ namespace System.Runtime.CompilerServices
 [Serializable]
 [AttributeUsage(AttributeTargets.Property, Inherited = true)]
 [System.Runtime.InteropServices.ComVisible(true)]
-    public sealed class IndexerNameAttribute: Attribute
+    public sealed class IndexerName2 : Attribute
     {
-        public IndexerNameAttribute(String indexerName)
+        public IndexerName2(String indexerName)
         {}
     }
 }

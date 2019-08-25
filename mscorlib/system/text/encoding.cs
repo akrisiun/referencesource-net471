@@ -85,7 +85,7 @@ namespace System.Text
 
 [System.Runtime.InteropServices.ComVisible(true)]
     [Serializable]
-    public abstract class Encoding : ICloneable
+    public abstract class Encoding2 : ICloneable
     {
         private static readonly UTF8Encoding.UTF8EncodingSealed s_defaultUtf8EncodingNoBom  = new UTF8Encoding.UTF8EncodingSealed(encoderShouldEmitUTF8Identifier: false);
         
@@ -198,12 +198,12 @@ namespace System.Text
         [OptionalField(VersionAdded = 2)]
         internal DecoderFallback decoderFallback = null;
 
-        protected Encoding() : this(0)
+        protected Encoding2() : this(0)
         {
         }
 
 
-        protected Encoding(int codePage)
+        protected Encoding2(int codePage)
         {
             // Validate code page
             if (codePage < 0)
@@ -710,7 +710,7 @@ namespace System.Text
         [Pure]
         public virtual byte[] GetPreamble()
         {
-            return EmptyArray<Byte>.Value;
+            return EmptyArray<byte>.Value;
         }
 
         private void GetDataItem() {

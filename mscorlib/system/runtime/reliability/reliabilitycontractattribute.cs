@@ -48,9 +48,9 @@ namespace System.Runtime.ConstrainedExecution {
     }
 
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Interface /* | AttributeTargets.Delegate*/, Inherited = false)]
-    public sealed class ReliabilityContractAttribute : Attribute
+    public sealed class ReliabilityContract : Attribute
     {
-        private Consistency _consistency;
+        private Consistency2 _consistency;
         private Cer _cer;
 
         public ReliabilityContractAttribute(Consistency consistencyGuarantee, Cer cer)

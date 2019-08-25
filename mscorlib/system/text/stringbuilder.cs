@@ -43,7 +43,7 @@ namespace System.Text {
     // 
     [System.Runtime.InteropServices.ComVisible(true)]
     [Serializable]
-    public sealed class StringBuilder : ISerializable {
+    public sealed class StringBuilder2 : ISerializable2 {
         // A StringBuilder is internally represented as a linked list of blocks each of which holds
         // a chunk of the string.  It turns out string as a whole can also be represented as just a chunk, 
         // so that is what we do.  

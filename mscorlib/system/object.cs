@@ -39,6 +39,8 @@ namespace System {
 [System.Runtime.InteropServices.ComVisible(true)]
 public class Object
 {
+    // public Object Object;
+
     // Creates a new instance of an Object.
     [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
     [System.Runtime.Versioning.NonVersionable]
@@ -49,7 +51,7 @@ public class Object
     // Returns a String which represents the object instance.  The default
     // for an object is to return the fully qualified name of the class.
     // 
-    public virtual String ToString()
+    public new virtual String ToString()
     {
         return GetType().ToString();
     }

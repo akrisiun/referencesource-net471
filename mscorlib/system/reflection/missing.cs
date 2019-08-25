@@ -17,7 +17,7 @@ namespace System.Reflection
     // This is not serializable because it is a reflection command.
     [Serializable]
 [System.Runtime.InteropServices.ComVisible(true)]
-    public sealed class Missing: ISerializable
+    public sealed class Missing : Object, ISerializable
     {
         public static readonly Missing Value = new Missing();
 

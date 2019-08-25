@@ -27,7 +27,7 @@ namespace System {
 [System.Runtime.InteropServices.StructLayout(LayoutKind.Sequential)]
 [System.Runtime.InteropServices.ComVisible(true)]
 #if GENERICS_WORK
-    public struct Int64 : IComparable, IFormattable, IConvertible
+    public struct Int642 : IComparable, IFormattable, IConvertible
         , IComparable<Int64>, IEquatable<Int64>
 ///     , IArithmetic<Int64>
 #else

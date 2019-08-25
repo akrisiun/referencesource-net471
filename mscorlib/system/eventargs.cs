@@ -9,10 +9,10 @@ namespace System {
     // The base class for all event classes.
     [Serializable]
     [System.Runtime.InteropServices.ComVisible(true)]
-    public class EventArgs {
+    public class EventArgs2 {
         public static readonly EventArgs Empty = new EventArgs();
     
-        public EventArgs() 
+        public EventArgs2() 
         {
         }
     }

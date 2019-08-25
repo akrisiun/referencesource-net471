@@ -23,9 +23,9 @@ namespace System.Runtime.CompilerServices {
         Synchronized       =   System.Reflection.MethodImplAttributes.Synchronized,
         NoInlining         =   System.Reflection.MethodImplAttributes.NoInlining,
         [System.Runtime.InteropServices.ComVisible(false)]
-        AggressiveInlining =   System.Reflection.MethodImplAttributes.AggressiveInlining,
-        NoOptimization     =   System.Reflection.MethodImplAttributes.NoOptimization,
-        SecurityMitigations =  System.Reflection.MethodImplAttributes.SecurityMitigations,
+        AggressiveInlining =   System.Reflection.MethodImplAttributes.AggressiveInlining,   // 256
+        NoOptimization     =   System.Reflection.MethodImplAttributes.NoOptimization,  // NoOptimization = 64,
+        SecurityMitigations =  512, // System.Reflection.MethodImplAttributes.SecurityMitigations,
         // **** If you add something, update internal MethodImplAttribute(MethodImplAttributes methodImplAttributes)! ****
     }
 

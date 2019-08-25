@@ -7,8 +7,13 @@ namespace System {
  
     using System;
     using System.Runtime.Serialization;
+    // using Environment = System.Environment2;
+
+    public class SystemException2 : SystemException
+    { }
+
     [Serializable]
-[System.Runtime.InteropServices.ComVisible(true)]
+    [System.Runtime.InteropServices.ComVisible(true)]
     public class SystemException : Exception
     {
         public SystemException() 

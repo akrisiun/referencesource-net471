@@ -134,7 +134,8 @@ namespace System.Net {
             Trace();
         }
 
-        [EnvironmentPermission(SecurityAction.Assert, Unrestricted=true)]
+        // Ankr TODO
+        // [EnvironmentPermission(SecurityAction.Assert, Unrestricted=true)]
         private void Trace() {
             m_Trace = "WARNING! GC-ed  >>" + this.GetType().FullName + "<< (should be excplicitly closed) \r\n";
 #if TRAVE
@@ -163,7 +164,8 @@ namespace System.Net {
             Trace();
         }
 
-        [EnvironmentPermission(SecurityAction.Assert, Unrestricted=true)]
+        // Ankr TODO
+        // [EnvironmentPermission(SecurityAction.Assert, Unrestricted=true)]
         private void Trace() {
             m_Trace = "WARNING! GC-ed  >>" + this.GetType().FullName + "<< (should be excplicitly closed) \r\n";
             GlobalLog.Print("Creating SafeHandle, type = " + this.GetType().FullName);
@@ -192,7 +194,7 @@ namespace System.Net {
             Trace();
         }
 
-        [EnvironmentPermission(SecurityAction.Assert, Unrestricted=true)]
+        // [EnvironmentPermission(SecurityAction.Assert, Unrestricted=true)]
         private void Trace() {
             m_Trace = "WARNING! GC-ed  >>" + this.GetType().FullName + "<< (should be excplicitly closed) \r\n";
             GlobalLog.Print("Creating SafeHandle, type = " + this.GetType().FullName);
@@ -222,7 +224,7 @@ namespace System.Net {
         }
 
         [SuppressMessage("Microsoft.Security","CA2106:SecureAsserts", Justification="DEBUG use only: Require access to Environment.StackTrace regardless of app permissions")]
-        [EnvironmentPermission(SecurityAction.Assert, Unrestricted=true)]
+        // [EnvironmentPermission2(SecurityAction.Assert, Unrestricted=true)]
         private void Trace() {
             m_Trace = "WARNING! GC-ed  >>" + this.GetType().FullName + "<< (should be excplicitly closed) \r\n";
             GlobalLog.Print("Creating SafeHandle, type = " + this.GetType().FullName);

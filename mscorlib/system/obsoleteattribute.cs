@@ -38,7 +38,7 @@ namespace System {
             _error = false;
         }
     
-        public ObsoleteAttribute (String message)
+        public Obsolete2(String message)
         {
             _message = message;
             _error = false;

@@ -65,7 +65,7 @@ namespace System.Runtime.CompilerServices {
     internal static class JitHelpers
     {
         // The special dll name to be used for DllImport of QCalls
-        internal const string QCall = "QCall";
+        internal const String QCall = "QCall";
 
         // Wraps object variable into a handle. Used to return managed strings from QCalls.
         // s has to be a local variable on the stack.
@@ -91,7 +91,7 @@ namespace System.Runtime.CompilerServices {
             return new StackCrawlMarkHandle(UnsafeCastToStackPointer(ref stackMark));
         }
 
-#if _DEBUG
+#if !RELEASE // _DEBUG
         [SecurityCritical]
         [FriendAccessAllowed]
         static internal T UnsafeCast<T>(Object o) where T : class
@@ -165,6 +165,7 @@ namespace System.Runtime.CompilerServices {
             throw new InvalidOperationException();
         }
 #else // _DEBUG
+
         // The IL body of this method is not critical, but its body will be replaced with unsafe code, so
         // this method is effectively critical
         [SecurityCritical]

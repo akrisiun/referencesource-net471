@@ -48,11 +48,11 @@ namespace System.Runtime.Versioning
 
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Constructor, Inherited = false)]
     [Conditional("RESOURCE_ANNOTATION_WORK")]
-    public sealed class ResourceExposureAttribute : Attribute
+    public sealed class ResourceExposure : Attribute
     {
         private ResourceScope _resourceExposureLevel;
 
-        public ResourceExposureAttribute(ResourceScope exposureLevel)
+        public ResourceExposure(ResourceScope exposureLevel)
         {
             _resourceExposureLevel = exposureLevel;
         }

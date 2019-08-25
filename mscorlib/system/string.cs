@@ -42,10 +42,24 @@ namespace System {
     // For Example:
     // String s = new String((String)null);
     // Console.WriteLine(s);
-    //
+
+    public sealed class String : String2
+    {
+        public unsafe  String(char* value) : base(value) { }
+        
+        public String(string value) : base(value.ToCharArray()) { }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public new String ToString2() => this;
+    }
+
     [ComVisible(true)]
     [Serializable] 
-    public sealed class String : IComparable, ICloneable, IConvertible, IEnumerable
+    public class String2 : Object, IComparable, ICloneable2, IConvertible, IEnumerable
 #if GENERICS_WORK
         , IComparable<String>, IEnumerable<char>, IEquatable<String>
 #endif
@@ -702,13 +716,14 @@ namespace System {
             }
         }
 
-        public static bool operator == (String a, String b) {
-           return String.Equals(a, b);
-        }
+        //TODO
+        //public static bool operator == (string a, string b) {
+        //   return String.Equals(a, b);
+        //}
 
-        public static bool operator != (String a, String b) {
-           return !String.Equals(a, b);
-        }
+        //public static bool operator != (string a, string b) {
+        //   return !String.Equals(a, b);
+        //}
     
         // Gets the character at a specified position.
         //
@@ -1347,25 +1362,25 @@ namespace System {
         [System.Security.SecurityCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
         [CLSCompliant(false), MethodImplAttribute(MethodImplOptions.InternalCall)]
-        unsafe public extern String(char *value);
+        unsafe public extern String2(char *value);
         [System.Security.SecurityCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
         [CLSCompliant(false), MethodImplAttribute(MethodImplOptions.InternalCall)]
-        unsafe public extern String(char *value, int startIndex, int length);
+        unsafe public extern String2(char *value, int startIndex, int length);
     
         [System.Security.SecurityCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
         [CLSCompliant(false), MethodImplAttribute(MethodImplOptions.InternalCall)]
-        unsafe public extern String(sbyte *value);
+        unsafe public extern String2(sbyte *value);
         [System.Security.SecurityCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
         [CLSCompliant(false), MethodImplAttribute(MethodImplOptions.InternalCall)]
-        unsafe public extern String(sbyte *value, int startIndex, int length);
+        unsafe public extern String2(sbyte *value, int startIndex, int length);
 
         [System.Security.SecurityCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
         [CLSCompliant(false), MethodImplAttribute(MethodImplOptions.InternalCall)]
-        unsafe public extern String(sbyte *value, int startIndex, int length, Encoding enc);
+        unsafe public extern String2(sbyte *value, int startIndex, int length, Encoding enc);
         
         [System.Security.SecurityCritical]  // auto-generated
         unsafe static private String CreateString(sbyte *value, int startIndex, int length, Encoding enc) {            
@@ -1556,7 +1571,7 @@ namespace System {
         [System.Security.SecuritySafeCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern String(char [] value, int startIndex, int length);
+        public extern String2(char [] value, int startIndex, int length);
     
         // Creates a new string from the characters in a subarray.  The new string will be
         // created from the characters in value.
@@ -1564,8 +1579,8 @@ namespace System {
         
         [System.Security.SecuritySafeCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern String(char [] value);
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern String2(char [] value);
 
         [System.Security.SecurityCritical]  // auto-generated
         internal static unsafe void wstrcpy(char *dmem, char *smem, int charCount)
@@ -1758,8 +1773,8 @@ namespace System {
 
         [System.Security.SecuritySafeCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern String(char c, int count);
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern String2(char c, int count);
     
         //
         //
@@ -2693,7 +2708,7 @@ namespace System {
 
    
         // Returns this string.
-        public override String ToString() {
+        public override string ToString() {
             Contract.Ensures(Contract.Result<String>() != null);
             Contract.EndContractBlock();
             return this;

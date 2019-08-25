@@ -17,9 +17,11 @@ namespace System {
     // that implement ICloneable may be cloned. The interface defines a single 
     // method which is called to create a clone of the object.   Object defines a method
     // MemberwiseClone to support default clone operations.
-    // 
+    public interface ICloneable : ICloneable2 { }
+
+
     [System.Runtime.InteropServices.ComVisible(true)]
-    public interface ICloneable
+    public interface ICloneable2
     {
         // Interface does not need to be marked with the serializable attribute
         // Make a new object which is a copy of the object instanced.  This object may be either

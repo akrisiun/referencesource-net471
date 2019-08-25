@@ -9,6 +9,7 @@
 namespace System {
     using System.Runtime.CompilerServices;
 
+    public delegate void Action2<in T>(T obj); 
     public delegate void Action<in T>(T obj); 
 
     // Action/Func delegates first shipped with .NET Framework 3.5 in System.Core.dll as part of LINQ

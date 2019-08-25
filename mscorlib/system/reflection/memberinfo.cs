@@ -25,7 +25,7 @@ namespace System.Reflection
 #if CONTRACTS_FULL
     [ContractClass(typeof(MemberInfoContracts))]
 #endif
-    public abstract class MemberInfo : ICustomAttributeProvider, _MemberInfo
+    public abstract class MemberInfo2 : ICustomAttributeProvider, _MemberInfo
     {
         #region Constructor
         protected MemberInfo() { }

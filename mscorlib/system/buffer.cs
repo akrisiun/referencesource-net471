@@ -12,6 +12,7 @@
 #else
     #error Unknown architecture
 #endif
+
 #if !PLATFORM_UNIX
     #define PLATFORM_WINDOWS
 #endif
@@ -48,7 +49,7 @@ namespace System {
         // array element indices and counts, use Array.Copy.
         [System.Security.SecuritySafeCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         public static extern void BlockCopy(Array src, int srcOffset,
             Array dst, int dstOffset, int count);
 
@@ -155,7 +156,7 @@ namespace System {
         //
         [System.Security.SecurityCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
-        [MethodImplAttribute(MethodImplOptions.InternalCall)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern byte _GetByte(Array array, int index);
 
         [System.Security.SecuritySafeCritical]  // auto-generated

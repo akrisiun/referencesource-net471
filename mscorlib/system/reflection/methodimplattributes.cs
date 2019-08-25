@@ -13,7 +13,7 @@ namespace System.Reflection
     // This Enum matchs the CorMethodImpl defined in CorHdr.h
     [Serializable]
 [System.Runtime.InteropServices.ComVisible(true)]
-    public enum MethodImplAttributes
+    public enum MethodImplAttributes2
     {
         // code impl mask
         CodeTypeMask       =   0x0003,   // Flags about code type.   

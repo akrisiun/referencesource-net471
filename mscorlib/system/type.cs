@@ -31,6 +31,10 @@ namespace System {
     using StackCrawlMark = System.Threading.StackCrawlMark;
     using DebuggerStepThroughAttribute = System.Diagnostics.DebuggerStepThroughAttribute;
 
+    // using Type = global::System.Type2;
+
+    public abstract class Type2 : Type {}
+
     [Serializable]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(_Type))]

@@ -58,10 +58,10 @@ namespace System.Runtime.InteropServices{
 
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Field | AttributeTargets.Property | AttributeTargets.Event, Inherited = false)]
     [System.Runtime.InteropServices.ComVisible(true)]
-    public sealed class DispIdAttribute : Attribute
+    public sealed class DispId2 : Attribute
     {
         internal int _val;
-        public DispIdAttribute(int dispId)
+        public DispId2(int dispId)
         {
             _val = dispId;
         }
@@ -138,10 +138,10 @@ namespace System.Runtime.InteropServices{
 
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Interface | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Delegate | AttributeTargets.Enum | AttributeTargets.Field | AttributeTargets.Method | AttributeTargets.Property, Inherited = false)]
     [System.Runtime.InteropServices.ComVisible(true)]
-    public sealed class ComVisibleAttribute : Attribute
+    public sealed class ComVisible : Attribute
     {
         internal bool _val;
-        public ComVisibleAttribute(bool visibility)
+        public ComVisible(bool visibility)
         {
             _val = visibility;
         }
@@ -658,10 +658,10 @@ namespace System.Runtime.InteropServices{
 
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Interface | AttributeTargets.Class | AttributeTargets.Enum | AttributeTargets.Struct | AttributeTargets.Delegate, Inherited = false)]
     [System.Runtime.InteropServices.ComVisible(true)]
-    public sealed class GuidAttribute : Attribute
+    public sealed class GuidAttribute2 : Attribute
     {
         internal String _val;
-        public GuidAttribute(String guid)
+        public GuidAttribute2(String guid)
         {
             _val = guid;
         }
@@ -845,13 +845,13 @@ namespace System.Runtime.InteropServices{
             ThrowOnUnmappableChar = throwOnUnmappableChar;
         }
 
-        internal String _val;
+        internal string _val;
 
-        public DllImportAttribute(String dllName)
+        public DllImportAttribute(string dllName)
         {
             _val = dllName;
         }
-        public String Value { get { return _val; } }
+        public string Value { get { return _val; } }
 
         public String EntryPoint;
         public CharSet CharSet;

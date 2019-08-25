@@ -53,7 +53,7 @@ namespace System {
     // case, it doesn't make much sense to provide a finalizer on the StreamWriter
     // since you cannot solve this problem correctly.  
 [System.Runtime.InteropServices.ComVisible(true)]
-    public interface IDisposable {
+    public interface IDisposable2 {
         void Dispose();
     }
 }

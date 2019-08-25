@@ -19,24 +19,24 @@ namespace System {
     using System.Runtime.Serialization;
 [System.Runtime.InteropServices.ComVisible(true)]
     [Serializable]
-    public class NotSupportedException : SystemException
+    public class NotSupportedException2 : SystemException2
     {
-        public NotSupportedException() 
-            : base(Environment.GetResourceString("Arg_NotSupportedException")) {
+        public NotSupportedException2() 
+            : base(Environment2.GetResourceString("Arg_NotSupportedException")) {
             SetErrorCode(__HResults.COR_E_NOTSUPPORTED);
         }
     
-        public NotSupportedException(String message) 
+        public NotSupportedException(string message) 
             : base(message) {
             SetErrorCode(__HResults.COR_E_NOTSUPPORTED);
         }
         
-        public NotSupportedException(String message, Exception innerException) 
+        public NotSupportedException2(string message, Exception innerException) 
             : base(message, innerException) {
             SetErrorCode(__HResults.COR_E_NOTSUPPORTED);
         }
 
-        protected NotSupportedException(SerializationInfo info, StreamingContext context) : base(info, context) {
+        protected NotSupportedException2(SerializationInfo info, StreamingContext context) : base(info, context) {
         }
 
     }

@@ -21,6 +21,8 @@ namespace System.Runtime.Serialization {
     using System;
     using System.Reflection;
 
+    public interface ISerializable2 : ISerializable { }
+
     [System.Runtime.InteropServices.ComVisible(true)]
     public interface ISerializable {
 #if FEATURE_SERIALIZATION

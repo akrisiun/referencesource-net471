@@ -11,7 +11,7 @@ namespace System.Reflection {
 [Serializable]
 [Flags] 
 [System.Runtime.InteropServices.ComVisible(true)]
-    public enum TypeAttributes
+    public enum TypeAttributes2
     {
         VisibilityMask    =   0x00000007,
         NotPublic         =   0x00000000,     // Class is not public scope.

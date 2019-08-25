@@ -128,9 +128,9 @@ namespace System.Security.AccessControl
     }
 
 
-    public sealed class RegistrySecurity : NativeObjectSecurity
+    public sealed class RegistrySecurity2 : NativeObjectSecurity
     {
-        public RegistrySecurity()
+        public RegistrySecurity2()
             : base(true, ResourceType.RegistryKey)
         {
         }
@@ -149,7 +149,7 @@ namespace System.Security.AccessControl
 
         [System.Security.SecurityCritical]  // auto-generated
         [SecurityPermission(SecurityAction.Assert, UnmanagedCode=true)]
-        internal RegistrySecurity(SafeRegistryHandle hKey, String name, AccessControlSections includeSections)
+        internal RegistrySecurity2(SafeRegistryHandle hKey, String name, AccessControlSections includeSections)
             : base(true, ResourceType.RegistryKey, hKey, includeSections, _HandleErrorCode, null )
         {
             new RegistryPermission(RegistryPermissionAccess.NoAccess, AccessControlActions.View, name).Demand();

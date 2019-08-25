@@ -54,14 +54,14 @@ namespace System.Runtime.Serialization
         private bool requireSameTokenInPartialTrust;
 #endif
         [CLSCompliant(false)]
-        public SerializationInfo(Type type, IFormatterConverter converter)
+        public SerializationInfo2(Type type, IFormatterConverter converter)
 #if FEATURE_SERIALIZATION
             : this(type, converter, false)
         {
         }
 
         [CLSCompliant(false)]
-        public SerializationInfo(Type type, IFormatterConverter converter, bool requireSameTokenInPartialTrust)
+        public SerializationInfo2(Type type, IFormatterConverter converter, bool requireSameTokenInPartialTrust)
 #endif
         {
             if ((object)type == null)
@@ -753,7 +753,7 @@ namespace System.Runtime.Serialization
             {
                 return (decimal)value;
             }
-            return m_converter.ToDecimal(value);
+            return m_converter.ToDecimal(value) as decimal;
         }
 
         public DateTime GetDateTime(String name)

@@ -26,7 +26,7 @@ namespace System {
         private int index;
         private char currentElement;
 
-        internal CharEnumerator(String str) {
+        internal CharEnumerator(string str) {
             Contract.Requires(str != null);
             this.str = str;
             this.index = -1;

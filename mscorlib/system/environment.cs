@@ -43,6 +43,14 @@ namespace System {
     }
 #endif 
 
+    public static class Environment2
+    {
+        internal static String GetResourceString(string key) 
+           => Environment.GetResourceFromDefault(key);
+           // #endif //FEATURE_CORECLR
+
+    }
+
     [ComVisible(true)]
     public static class Environment {
 
@@ -58,7 +66,7 @@ namespace System {
 
         internal sealed class ResourceHelper
         {
-            internal ResourceHelper(String name) {
+            internal ResourceHelper(string name) {
                 m_name = name;
             }
 
@@ -78,7 +86,7 @@ namespace System {
             private int infinitelyRecursingCount;
 
             // Data representing one individual resource lookup on a thread.
-            internal class GetResourceStringUserData
+            internal class GetResourceStringUserData : Object 
             {
                 public ResourceHelper m_resourceHelper;
                 public String m_key;
@@ -95,7 +103,7 @@ namespace System {
             }
             
             [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-            internal String GetResourceString(String key) {
+            internal string GetResourceString(String key) {
                 if (key == null || key.Length == 0) {
                     Contract.Assert(false, "Environment::GetResourceString with null or empty key.  Bug in caller, or weird recursive loading problem?");
                     return "[Resource lookup failed - null or empty resource name]";
@@ -105,7 +113,7 @@ namespace System {
 
             [System.Security.SecuritySafeCritical]  // auto-generated
             [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail)]
-            internal String GetResourceString(String key, CultureInfo culture)  {
+            internal string GetResourceString(String key, CultureInfo culture)  {
                 if (key == null || key.Length == 0) {
                     Contract.Assert(false, "Environment::GetResourceString with null or empty key.  Bug in caller, or weird recursive loading problem?");
                     return "[Resource lookup failed - null or empty resource name]";
@@ -151,7 +159,7 @@ namespace System {
                 String key = userData.m_key;
                 CultureInfo culture = userData.m_culture;
 
-                Monitor.Enter(rh, ref userData.m_lockWasTaken);
+                Monitor.Enter((object)rh, ref userData.m_lockWasTaken);
 
                 // Are we recursively looking up the same resource?  Note - our backout code will set
                 // the ResourceHelper's currentlyLoading stack to null if an exception occurs.
@@ -173,7 +181,7 @@ namespace System {
 
                     // Note: our infrastructure for reporting this exception will again cause resource lookup.
                     // This is the most direct way of dealing with that problem.
-                    String message = "Infinite recursion during resource lookup within mscorlib.  This may be a bug in mscorlib, or potentially in certain extensibility points such as assembly resolve events or CultureInfo names.  Resource name: " + key;
+                    string message = "Infinite recursion during resource lookup within mscorlib.  This may be a bug in mscorlib, or potentially in certain extensibility points such as assembly resolve events or CultureInfo names.  Resource name: " + key;
                     Assert.Fail("[mscorlib recursive resource lookup bug]", message, Assert.COR_E_FAILFAST, System.Diagnostics.StackTrace.TraceFormat.NoResourceLookup);
                     Environment.FailFast(message);
                 }
@@ -1285,8 +1293,10 @@ namespace System {
         [System.Security.SecurityCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        internal extern static String GetResourceFromDefault(String key);           
+        internal extern static String GetResourceFromDefault(string key);           
 #endif	
+
+        internal extern static String GetResourceFromDefault2(String key);           
 
         // Looks up the resource string value for key.
         // 
@@ -1318,13 +1328,18 @@ namespace System {
 
         [System.Security.SecuritySafeCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
-        internal static String GetResourceString(String key) {
+        internal static String GetResourceString(string key) {
 #if FEATURE_CORECLR
             return GetResourceStringLocal(key);
 #else
             return GetResourceFromDefault(key);
 #endif //FEATURE_CORECLR
         }
+
+        internal static String GetResourceString(String key) {
+            return GetResourceFromDefault( key as string).ToString();
+        }
+
 
         [System.Security.SecuritySafeCritical]  // auto-generated
         [ResourceExposure(ResourceScope.None)]
@@ -1386,7 +1401,7 @@ namespace System {
         [ResourceExposure(ResourceScope.None)]
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
         [System.Security.SecurityCritical]
-        internal static extern bool GetCompatibilityFlag(CompatibilityFlag flag);
+        internal static extern bool GetCompatibilityFlag(object flag); // CompatibilityFlag flag);
 #endif //!FEATURE_CORECLR
 
         public static string UserName {
@@ -1456,7 +1471,7 @@ namespace System {
         public static string GetFolderPath(SpecialFolder folder, SpecialFolderOption option) {
             if (!Enum.IsDefined(typeof(SpecialFolder),folder))
                 throw new ArgumentException(Environment.GetResourceString("Arg_EnumIllegalVal", (int)folder));
-            if (!Enum.IsDefined(typeof(SpecialFolderOption),option))
+            if (!Enum.IsDefined(typeof(SpecialFolderOption), option))
                 throw new ArgumentException(Environment.GetResourceString("Arg_EnumIllegalVal", (int)option));
             Contract.EndContractBlock();
 

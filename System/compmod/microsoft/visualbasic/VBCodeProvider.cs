@@ -531,7 +531,7 @@ namespace Microsoft.VisualBasic {
             }
         }
 
-        [ResourceExposure(ResourceScope.None)]
+        [ResourceExposureAttribute(ResourceScope.None)]
         [ResourceConsumption(ResourceScope.Machine, ResourceScope.Machine)]
         protected override string CmdArgsFromParameters(CompilerParameters options) {
             // The VB Compiler throws an error if an empty string is specified as an assembly reference.
@@ -2793,7 +2793,7 @@ namespace Microsoft.VisualBasic {
             }
         }
         
-        [ResourceExposure(ResourceScope.Machine)]
+        [ResourceExposureAttribute(ResourceScope.Machine)]
         [ResourceConsumption(ResourceScope.Machine)]
         protected override CompilerResults FromFileBatch(CompilerParameters options, string[] fileNames) {
             if( options == null) {

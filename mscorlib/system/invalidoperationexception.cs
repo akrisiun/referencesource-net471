@@ -22,7 +22,7 @@ namespace System {
     public class InvalidOperationException : SystemException
     {
         public InvalidOperationException() 
-            : base(Environment.GetResourceString("Arg_InvalidOperationException")) {
+            : base(Environment2.GetResourceString("Arg_InvalidOperationException")) {
             SetErrorCode(__HResults.COR_E_INVALIDOPERATION);
         }
         
