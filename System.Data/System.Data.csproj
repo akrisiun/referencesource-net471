@@ -28,6 +28,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\System.Core\System.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="fx\src\data\System\Data\Common\DataAdapter.cs">
       <SubType>Component</SubType>
     </Compile>
