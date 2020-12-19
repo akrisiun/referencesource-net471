@@ -67,6 +67,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Web", "System.Web\Sy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Windows.Forms", "..\winForms\src\System.Windows.Forms\src\System.Windows.Forms.csproj", "{3498324D-8BF5-4C9A-843A-7D28E0A70321}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\SourceBrowser\src\Common\Common.csproj", "{97B57414-43F4-4A96-A8D9-7E909BD4129B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,6 +293,14 @@ Global
 		{3498324D-8BF5-4C9A-843A-7D28E0A70321}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3498324D-8BF5-4C9A-843A-7D28E0A70321}.Release|x64.ActiveCfg = Release|Any CPU
 		{3498324D-8BF5-4C9A-843A-7D28E0A70321}.Release|x64.Build.0 = Release|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Debug|x64.Build.0 = Debug|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Release|x64.ActiveCfg = Release|Any CPU
+		{97B57414-43F4-4A96-A8D9-7E909BD4129B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
